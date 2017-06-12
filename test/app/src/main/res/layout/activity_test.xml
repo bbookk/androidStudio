@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context="com.example.office1.test.testActivity">
+
+    <TextView
+        android:id="@+id/counter_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="100dp"
+        android:background="@color/counter_background"
+        android:gravity="right"
+        android:padding="5dp"
+        android:textSize="25sp"
+  />
+
+    <RadioGroup
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        >
+
+    <RadioButton
+        android:id="@+id/count_up_radio"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginRight="20dp"
+        android:checked="true"
+        android:text="@string/count_up_label"
+    />
+
+    <RadioButton
+        android:id="@+id/count_down_radio"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/count_down_label"
+        />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/count_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/count_label"
+        />
+
+</LinearLayout>

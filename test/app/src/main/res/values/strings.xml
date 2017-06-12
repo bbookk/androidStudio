@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Counter</string>
+    <string name="my_string">hello world</string>
+    <string name="menu_setting">Setting</string>
+    <string name="count_up_label">นับขึ้น</string>
+    <string name="count_down_label">นับลง</string>
+    <string name="count_label">นับ</string>
+</resources>
