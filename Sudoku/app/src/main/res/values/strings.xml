@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Sudoku</string>
+    <string name="Main_title">เกมซูโดกุ</string>
+    <string name="continue_label">เล่นเกมต่อ</string>
+    <string name="newgame_label">เริ่มเกมใหม่</string>
+    <string name="about_label">เกี่ยวกับซูโดกุ</string>
+    <string name="exit_label">ออกจากเกม</string>
+    <string name="about_title">เกี่ยวกับซูโดกุ</string>
+    <string name="about_text">/<b>เกมซูโดกุ (Sudoku)</b> เป็นเกมที่ผู้ใช้ต้องใส่ตัวเลข 1-9 ลงในช่องต่างๆ
+    เพื่อทำให้แต่ละแถว และแต่ละคอลัมภ์มีเลข 1-9 ครบ</string>
+    <string name="setting_label">ตัวเลือก...</string>
+    <string name="setting_title">Sudoku Setting</string>
+    <string name="music_title">ดนตรี (music)</string>
+    <string name="music_summary">เล่นเพลงประกอบ</string>
+    <string name="hints_title">ตัวช่วย (Hint)</string>
+    <string name="hints_summary">แสดงตัวช่วยในขณะเล่นเกม</string>
+    <string name="newgame">เลือกระดับความยากของเกม</string>
+    <string name="easy">ง่ายม</string>
+    <string name="medium">ปานกลาง</string>
+    <string name="hard">ยาก</string>
+    <string name="game_title">Game</string>
+    <string name="no_move">ไม่่สามารถเติมตัวเลขใดๆที่่ตำแหน่งนี้ได้</string>
+    <string name="keypad_title">Keypad</string>
+
+
+</resources>
