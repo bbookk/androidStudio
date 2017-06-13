@@ -15,7 +15,7 @@
     <string name="hints_title">ตัวช่วย (Hint)</string>
     <string name="hints_summary">แสดงตัวช่วยในขณะเล่นเกม</string>
     <string name="newgame">เลือกระดับความยากของเกม</string>
-    <string name="easy">ง่ายม</string>
+    <string name="easy">ง่าย</string>
     <string name="medium">ปานกลาง</string>
     <string name="hard">ยาก</string>
     <string name="game_title">Game</string>
