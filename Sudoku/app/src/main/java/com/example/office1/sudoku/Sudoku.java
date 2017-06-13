@@ -33,6 +33,9 @@ public class Sudoku extends Activity implements View.OnClickListener{
 
     public void onClick(View v){
         switch (v.getId()){
+            case R.id.continue_btn:
+                startGame(PuzzleActivity.CONTINUE);
+                break;
             case R.id.about_btn:
                 Intent i = new Intent(this, About.class);
                 startActivity(i);
@@ -83,4 +86,5 @@ public class Sudoku extends Activity implements View.OnClickListener{
         intent.putExtra(PuzzleActivity.KEY_DIFFICULTY, i);
         startActivity(intent);
     }
+
 }

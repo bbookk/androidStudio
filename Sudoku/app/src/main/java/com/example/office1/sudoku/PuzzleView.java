@@ -1,28 +1,34 @@
 package com.example.office1.sudoku;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 
 public class PuzzleView extends View {
     private final PuzzleActivity game;
+    private static final String SELX = "selX";
+    private static final String SELY = "selY";
+    private static final String VIEW_STATE = "viewState";
+    private float width;
+    private float height;
+    private int selX;
+    private int selY;
+    private final Rect selRect = new Rect(); //พื้นที่ของช่องตารางที่เป็นตำแหน่ง cursor
 
     public PuzzleView(Context context){
         super(context);
         this.game = (PuzzleActivity) context;
         setFocusable(true);
         setFocusableInTouchMode(true);
+        setId(99);
     }
-
-    private float width;
-    private float height;
-    private int selX;
-    private int selY;
-    private final Rect selRect = new Rect(); //พื้นที่ของช่องตารางที่เป็นตำแหน่ง cursor
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
@@ -192,5 +198,24 @@ public class PuzzleView extends View {
         if(game.setTileIfValid(selX, selY, num)){
             invalidate();
         }
+    }
+
+    protected Parcelable onSaveInstanceState(){
+        Parcelable p = super.onSaveInstanceState();
+
+        Bundle b = new Bundle();
+        b.putInt(SELX, selX);
+        b.putInt(SELY, selY);
+        b.putParcelable(VIEW_STATE, p);
+
+        return b;
+    }
+
+    protected void onRestoreInstanceState(Parcelable state){
+        Bundle b = (Bundle) state;
+        select(b.getInt(SELX), b.getInt(SELY));
+        super.onRestoreInstanceState(b.getParcelable(VIEW_STATE));
+
+        return;
     }
 }

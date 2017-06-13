@@ -15,6 +15,9 @@ public class PuzzleActivity extends Activity {
     private int puzzle[] = new int[9*9];
 
     private PuzzleView puzzleView;
+    private static final String PREF_PUZZLE = "puzzle";
+    protected static final int CONTINUE = -1;
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +30,8 @@ public class PuzzleActivity extends Activity {
         puzzleView = new PuzzleView(this);
         setContentView(puzzleView);
         puzzleView.requestFocus();
+
+        getIntent().putExtra(KEY_DIFFICULTY,CONTINUE);
     }
 
     protected boolean setTileIfValid(int x, int y, int value){
@@ -136,6 +141,9 @@ public class PuzzleActivity extends Activity {
     private int[] getPuzzle(int diff){
         String puz = null;
         switch(diff){
+            case CONTINUE:
+                puz = getPreferences(MODE_PRIVATE).getString(PREF_PUZZLE,easy);
+                break;
             case HARD:
                 puz = hard;
                 break;
@@ -170,5 +178,17 @@ public class PuzzleActivity extends Activity {
         }
     }
 
+    static private String toPuzzleString(int[] puz){
+        StringBuilder buf = new StringBuilder();
+        for(int ele : puz){
+            buf.append(ele);
+        }
+        return buf.toString();
+    }
 
+    @Override
+    protected  void onPause(){
+        getPreferences(MODE_PRIVATE).edit().putString(PREF_PUZZLE,toPuzzleString(puzzle)).commit();
+
+    }
 }
